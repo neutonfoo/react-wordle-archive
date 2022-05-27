@@ -75,12 +75,13 @@ export const localeAwareUpperCase = (text: string) => {
 }
 
 export const getWordOfDay = () => {
-  // January 1, 2022 Game Epoch
-  const epoch = new Date(2022, 0)
+  // Set to May 19 because it calculates today's Wordle index correctly
+  const epoch = new Date(2021, 5, 19)
   const start = new Date(epoch)
   const today = new Date()
-  today.setHours(0, 0, 0, 0)
   let index = 0
+
+  today.setHours(0, 0, 0, 0)
   while (start < today) {
     index++
     start.setDate(start.getDate() + 1)
@@ -88,6 +89,12 @@ export const getWordOfDay = () => {
 
   const nextDay = new Date(today)
   nextDay.setDate(today.getDate() + 1)
+
+  const givenWordleIndex = window.location.search.substring(1)
+  if (givenWordleIndex) {
+    index = parseInt(givenWordleIndex)
+  } else {
+  }
 
   return {
     solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
