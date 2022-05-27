@@ -93,7 +93,6 @@ export const getWordOfDay = () => {
   const givenWordleIndex = window.location.search.substring(1)
   if (givenWordleIndex) {
     index = parseInt(givenWordleIndex)
-  } else {
   }
 
   return {
