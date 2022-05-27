@@ -257,6 +257,12 @@ function App() {
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
+      <div className="self-center pt-2 pb-2">
+        <h1 className="text-white">
+          Add <code className="text-yellow-300">?wordle-index</code> at the end
+          of the URL to play that game.
+        </h1>
+      </div>
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6 grow">
           <Grid
